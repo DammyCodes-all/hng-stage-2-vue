@@ -23,7 +23,7 @@ interface BgCircleProps {
 
 const props = withDefaults(defineProps<BgCircleProps>(), {
   size: 200,
-  color: "rgba(37,99,235,0.15)",
+  color: "rgba(37,99,235,0.4)",
   blur: false,
   opacity: 1,
 });

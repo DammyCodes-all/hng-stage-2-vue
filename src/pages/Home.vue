@@ -22,10 +22,12 @@
             class="cursor-pointer bg-blue-500 text-white hover:bg-blue-600 rounded-md text-sm font-medium transition-colors"
             variant="secondary"
           >
-            <RouterLink to="/dashboard">Get started</RouterLink>
+            <RouterLink to="/dashboard" @click="getStarted"
+              >Get started</RouterLink
+            >
           </Button>
           <Button class="cursor-pointer" variant="outline">
-            <RouterLink to="/auth/signup">SignUp</RouterLink>
+            <RouterLink to="/auth/login">Login</RouterLink>
           </Button>
         </div>
         <BgCircle :blur="true" right="0%" />
@@ -78,4 +80,11 @@ import BgCircle from "@/components/Cicle.vue";
 import { Button } from "@/components/ui/button";
 import { LandingPageBoxes } from "@/constants";
 import { RouterLink } from "vue-router";
+import { useAuth } from "@/composables/useAuth";
+import { toast } from "vue-sonner";
+const { user } = useAuth();
+const getStarted = () => {
+  if (user.value?.sessionActive) return;
+  toast.info("Please login/signup to get started");
+};
 </script>
