@@ -58,7 +58,7 @@
         </span>
       </h2>
       <div
-        class="flex gap-4 flex-col md:flex-row justify-center items-stretch mt-10"
+        class="flex gap-4 flex-col md:flex-row justify-center items-center md:items-stretch mt-10"
       >
         <div
           v-for="box in LandingPageBoxes"
